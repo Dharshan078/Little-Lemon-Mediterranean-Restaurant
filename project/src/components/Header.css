@@ -35,7 +35,7 @@ header img {
   object-fit: cover;
   height: 350px;
 }
-
+/* Reserve a Table Button */
 .Hero-button{
   animation: bubbleanimation 5s linear 0s infinite;
 }
