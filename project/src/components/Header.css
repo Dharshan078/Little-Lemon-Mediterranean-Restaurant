@@ -2,7 +2,8 @@ header {
   display: flex;
   background-color: #495e57;
   padding: 0 15%;
-  height: 400px;
+  padding-bottom: 70px;
+  height: auto;
 }
 
 .left-side,
@@ -29,7 +30,21 @@ header img {
   transform: translateY(10%);
   float: right;
   border-radius: 1.5rem;
-  width: 400px;
+  width: auto;
   aspect-ratio: 5 / 6;
   object-fit: cover;
+  height: 350px;
+}
+
+.Hero-button{
+  animation: bubbleanimation 5s linear 0s infinite;
+}
+
+@keyframes bubbleanimation{
+	0%{transform: rotate3d(0,0,0); background-color: rgb(241, 254, 172);}
+	20%{transform: rotate3d(0,0,0); background-color: rgb(249, 255, 131);}
+	40%{transform: rotate3d(50,0,0); background-color: rgb(254, 240, 140);}
+	60%{transform: rotate3d(50,0,-50); background-color: rgb(249, 255, 131);}
+	80%{transform: rotate3d(0,0,-50); background-color: rgb(241, 254, 172);}
+	100%{transform: rotate3d(0,0,0); background-color: rgb(255, 255, 255);}
 }

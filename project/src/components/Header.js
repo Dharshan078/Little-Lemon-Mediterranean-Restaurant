@@ -13,7 +13,7 @@ const Header = () => {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>
-        <button>
+        <button className="Hero-button">
           <Link to="/booking">Reserve a table</Link>
         </button>
       </div>
@@ -21,6 +21,7 @@ const Header = () => {
         <img
           src={Food}
           alt="our cook holding a tablet with delicoues baguettes"
+          className="Header_img"
         />
       </div>
     </header>

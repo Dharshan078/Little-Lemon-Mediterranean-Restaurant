@@ -72,7 +72,7 @@ const BookingForm = ({ navigate }) => {
             value={form.numberOfGuests}
             onChange={changeGuestsHandler}
             type="number"
-            placeholder="1"
+            placeholder=""
             min="1"
             max="10"
             id="guests"
