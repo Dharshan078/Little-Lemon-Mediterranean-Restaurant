@@ -16,6 +16,9 @@ Reservation
 ## Take a Look
 
 https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/33843872-8a2d-45fc-b34d-5fc7af7d4588
+![Untitled video - Made with Clipchamp (1)](https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/8101ad40-edf0-4b27-a0ff-d93cff8e84f2)
+
+
 
 ## Snapshots of Little Lemon Restaurant 
 
