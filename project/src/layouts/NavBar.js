@@ -14,19 +14,16 @@ function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#about">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="#menu">Menu</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
           <Link to="/booking">Reservations</Link>
         </li>
         <li>
-          <a href="#order-online">Order Online</a>
-        </li>
-        <li>
-          <a href="#login">Login</a>
+          <a href="/login">Login</a>
         </li>
       </ul>
     </nav>

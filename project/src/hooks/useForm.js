@@ -124,16 +124,16 @@ const useForm = () => {
     dispatch({ type: ACTION_TYPES.MESSAGE, payload: e.target.value });
   };
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const submitHandler = () => {
     let response;
-
+  
     if (isFormValid) {
       response = submitAPI(form);
       formContext.setForm(form);
     }
     return response ? true : false;
   };
+  
 
   return {
     form,

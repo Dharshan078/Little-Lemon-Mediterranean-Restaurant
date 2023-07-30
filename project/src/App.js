@@ -4,6 +4,9 @@ import NavBar from "./layouts/NavBar";
 import Footer from "./layouts/Footer";
 import Home from "./pages/Home";
 import Booking from "./pages/Booking";
+import About from "./pages/About";
+import Menu from "./pages/Menu";
+import Login from "./pages/Login";
 import BookingConfirmation from "./pages/BookingConfirmation";
 import { useFormContext } from "./store/FormContext";
 import "./App.css";
@@ -31,6 +34,9 @@ function App() {
           path="/booking-confirmation"
           element={<BookingConfirmation {...formProps} />}
         />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>

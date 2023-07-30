@@ -37,7 +37,7 @@ header img {
 }
 /* Reserve a Table Button */
 .Hero-button{
-  animation: bubbleanimation 5s linear 0s infinite;
+  animation: bubbleanimation 3s linear 0s infinite;
 }
 
 @keyframes bubbleanimation{

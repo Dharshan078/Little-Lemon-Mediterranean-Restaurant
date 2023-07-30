@@ -21,15 +21,18 @@ label {
 
 textarea {
   resize: none;
+  height: 25px;
+  width: auto;
 }
 
 input,
 select,
 textarea {
-  border-radius: 8px;
+  height: 35px;
+  border-radius: 5px;
   padding: 0.3rem 1rem;
   border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 47, 29, 0.2);
   width: 100%;
 }
 

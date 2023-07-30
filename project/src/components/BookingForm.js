@@ -1,128 +1,157 @@
 import React from "react";
-import useForm from "../hooks/useForm";
+import { useState } from "react";
 import "./BookingForm.css";
+import axios from "axios";
 
-const BookingForm = ({ navigate }) => {
-  const {
-    form,
-    timeSlots,
-    isFormValid,
-    changeNameHandler,
-    changeEmailHandler,
-    changeDateHandler,
-    changeTimeHandler,
-    changeGuestsHandler,
-    changeTableHandler,
-    changeOccasionHandler,
-    changeMessageHandler,
-    submitHandler,
-  } = useForm();
+const BookingForm = () => {
 
-  function handleSubmit() {
-    const response = submitHandler();
-    return response ? navigate("/booking-confirmation") : null;
-  }
+    const [name, setName] = useState('');
+
+    const [email, setEmail] = useState('');
+    
+    const [date, setDate] = useState(''); // State to store the selected date
+    const handledate = (e) => {
+    setDate(e.target.value); // Update the state when the date is selected
+    };
+
+    const [time, setTime] = useState(''); // State to store the selected option
+    const handletime = (e) => {
+      setTime(e.target.value); // Update the state when an option is selected
+    };
+
+    const [guest, setGuest] = useState(''); // State to store the selected option
+    const handleguest = (e) => {
+      setGuest(e.target.value); // Update the state when an option is selected
+    };
+
+    const [occasion, setOccasion] = useState(''); // State to store the selected option
+    const handleoccasion = (e) => {
+      setOccasion(e.target.value); // Update the state when an option is selected
+    };
+
+    const [table, setTable] = useState(''); // State to store the selected option
+    const handletable = (e) => {
+      setTable(e.target.value); // Update the state when an option is selected
+    };
+
+    const [req, setReq] = useState(''); // State to store the selected option
+    const handlereq = (e) => {
+      setReq(e.target.value); // Update the state when an option is selected
+    };
+
+    const handleSubmit = (e) => {
+      e.preventDefault(); // Prevent the default form submission behavior
+      // Do something with the selected option, for example, send it to the server or perform an action
+      //console.log('Name :', name, "|",'Email :', email, "|",'Date :', date, "|",'Time :', time, "|",'Number of Guests :', guest, "|",'Occasion :', occasion, "|",'Table Preference :', table, "|",'Additional Request :', req, "|" );
+      const data={
+        Name:name,
+        Email:email,
+        Date:date,
+        Time:time,
+        Guest:guest,
+        Occasion:occasion,
+        Table:table,
+        Request:req,
+      }
+      axios.post('https://sheet.best/api/sheets/8f2b6a0d-6c2d-4b1d-88ce-204e5eedcba5', data).then((response)=>
+      {console.log(response);
+        setName('');
+        setEmail('');
+        setDate('');
+        setTime('');
+        setGuest('');
+        setOccasion('');
+        setTable('');
+        setReq('');
+      })
+    };
 
   return (
-    <form onSubmit={handleSubmit} className="reservation-form">
+    <form autoComplete="off" className='reservation-form' onSubmit={handleSubmit}>
       <div className="column">
-        <label htmlFor="name">
-          <p>Your Name</p>
-          <input
-            value={form.name}
-            onChange={changeNameHandler}
-            type="text"
-            id="name"
-          />
-        </label>
-        <label htmlFor="email">
-          <p>Your Email</p>
-          <input
-            value={form.email}
-            onChange={changeEmailHandler}
-            type="email"
-            id="email"
-          />
-        </label>
-        <label htmlFor="res-date">
-          <p>Choose date</p>
-          <input
-            value={form.date}
-            onChange={changeDateHandler}
-            type="date"
-            id="res-date"
-            placeholder="Date"
-          />
-        </label>
-        <label htmlFor="res-time">
-          <p>Choose time</p>
-          <select onChange={changeTimeHandler} value={form.time} id="res-time">
-            {timeSlots.map((slot) => (
-              <option key={slot} value={slot}>
-                {slot}
-              </option>
-            ))}
-          </select>
-        </label>
+      <label>Name
+      <input type='text' placeholder="Enter your name" required 
+      className='form-control'
+      onChange={(e)=>setName(e.target.value)} value={name}/>
+      </label>
+      <label>Email
+      <input type='email' placeholder="Enter your Email" required 
+      className='form-control' 
+      onChange={(e)=>setEmail(e.target.value)} value={email}/>
+      </label>
+      <label>Date
+      <input type='date' 
+      value={date}
+      onChange={handledate}
+      required className='form-control' />
+      </label>
+      <label>
+      Enter Time
+      <select value={time} onChange={handletime} className='form-control'>
+      <option value="12:30">12:30</option>         
+      <option value="01:30">01:30</option>
+      <option value="02:30">02:30</option>
+      <option value="03:30">03:30</option>
+      </select>
+      </label> 
       </div>
+
       <div className="column">
-        <label htmlFor="guests">
-          <p>Number of guests</p>
-          <input
-            value={form.numberOfGuests}
-            onChange={changeGuestsHandler}
-            type="number"
-            placeholder=""
-            min="1"
-            max="10"
-            id="guests"
-            required
-          />
-        </label>
-        <label htmlFor="occasion">
-          <p>Occasion</p>
-          <select
-            value={form.occasion}
-            onChange={changeOccasionHandler}
-            id="occasion"
-          >
-            <option value="">None</option>
-            <option value="birthday">Birthday</option>
-            <option value="engagement">Engagement</option>
-            <option value="anniversary">Anniversary</option>
-          </select>
-        </label>
-        <label htmlFor="table">
-          <p>Table preference</p>
-          <select
-            value={form.tablePreference}
-            onChange={changeTableHandler}
-            id="occasion"
-          >
-            <option value="">None</option>
-            <option value="inside">Inside</option>
-            <option value="outside">Outside</option>
-          </select>
-        </label>
-      </div>
+      <label>
+      Number of Guests
+      <select value={guest} onChange={handleguest} className='form-control'>
+      <option value="1">1</option>         
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>         
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      </select>
+      </label> 
+
+      <label>
+      Occasion
+      <select value={occasion} onChange={handleoccasion} className='form-control'>
+      <option value="Birthday">Birthday</option>         
+      <option value="Marriage">Marriage</option>
+      <option value="Party">Party</option>
+      <option value="Family function">Family function</option>
+      </select>
+      </label> 
+
+      <label>
+      Table Preference
+      <select value={table} onChange={handletable} className='form-control'>
+      <option value="Inside">Inside</option>         
+      <option value="Outside">Outside</option>
+      </select>
+      </label> 
+
+      </div> 
+
       <div className="column">
-        <label htmlFor="message">
-          <p>Additional requests</p>
+        <label>
+          Additional requests
           <textarea
-            value={form.message}
-            onChange={changeMessageHandler}
             name="message"
-            id="message"
             cols="30"
-            rows="10"
+            rows="10px"
+            className='form-control'
+            placeholder="Enter your request here..."
+            value={req}
+            onChange={handlereq}
           ></textarea>
         </label>
       </div>
+
       <div className="submit-container">
-        <button disabled={!isFormValid}>Make Reservation</button>
+        <button type='submit'>Make Reservation</button>
       </div>
-    </form>
-  );
+ 
+    </form>  
+    );
 };
 
 export default BookingForm;

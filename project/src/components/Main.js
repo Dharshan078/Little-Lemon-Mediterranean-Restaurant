@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 import greekSalad from "../assets/Salad.jpg";
 import bruschetta from "../assets/Bruchetta.svg";
@@ -46,7 +47,7 @@ function Main() {
       <section className="specials">
         <div className="top">
           <h1>This weeks specials!</h1>
-          <button>Online Menu</button>
+          <button ><Link to="/menu">Online Menu</Link></button>
         </div>
         <div className="cards">{specialsCards}</div>
       </section>
