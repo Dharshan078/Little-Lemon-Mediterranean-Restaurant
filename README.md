@@ -1,17 +1,22 @@
 # Little Lemon Mediterranean Restaurant
 
-This is the project to get certification from Meta Front End Professional Certification offered by Coursera
+This project is used to store Reservation Form and Login Database to google sheets.
 
 ## Tech Used
 
+JavaScript
+HTML
 React.js
-Chakra UI 
+Bootstrap UI 
 CSS
 
 ## Project Contains
 
 Home Page
-Reservation
+Reservation Page
+About Page
+Menu Page
+Login Page
 
 ## Take a Look
 
@@ -27,6 +32,17 @@ Home Page
 
 Resrvation Page
 ![image](https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/73b01a01-d031-4b15-b471-c65b45ce9c25)
+
+About Page
+![image](https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/7ff0e75f-22a3-42df-9185-934b108962df)
+
+Menu Page
+![image](https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/bb533f92-e10e-45a3-970b-790de336078f)
+
+Login Page
+![image](https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/774589d2-2e8c-467d-840d-14fe3678a98d)
+
+
 
 
 Use gitclone to clone this repository to your local working directory
