@@ -2,12 +2,27 @@
 
 This project is used to store Reservation Form and Login Database to google sheets.
 
+#### Video Demo
+
+https://www.youtube.com/watch?v=fkNUkgfk-dE
+
+#### Description
+
+My CS50 final project Little Lemon Meditterian Restaurant to reserve a table in their restaurant, Online Menu cards, and a Login page to store the user and reservation details in Google Sheets.
+
+#### Website
+
+https://little-lemon-mediterranean-restaurant.vercel.app/
+or
+https://little-lemon-restaurant-dharshan.netlify.app/
+
 ## Tech Used
 
 JavaScript
 HTML
 React.js
-Bootstrap UI 
+Bootstrap UI
+API
 CSS
 
 ## Project Contains
@@ -30,7 +45,7 @@ Landing Page
 Home Page
 ![image](https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/c75eb74d-eacf-4352-9ed8-a9dabafc8ec6)
 
-Resrvation Page
+Reservation Page
 ![image](https://github.com/Dharshan078/Little-Lemon-Mediterranean-Restaurant/assets/103129616/73b01a01-d031-4b15-b471-c65b45ce9c25)
 
 About Page
